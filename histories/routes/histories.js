@@ -5,11 +5,8 @@ var User = require('../models/user');
 var SubContent = require('../models/sub_content');
 var Meeting = require('../models/meeting');
 
-router.get('/:meetingId', (req, res) => {
+router.get('/', (req, res) => {
     History.findAll({
-        where: {
-            meeting_id: req.params.meetingId
-        },
         order: [
             ['created_at', 'DESC']
         ]
