@@ -1,9 +1,9 @@
 const Sequelize = require('sequelize');
 function connectDatabase() {
     //params: database_name, username, password
-    return new Sequelize('history_services', 'root', 'root', {
+    return new Sequelize('meeting', 'root', 'root', {
         dialect: 'mysql',
-        host: 'history_db',
+        host: 'db',
         port: '3306',
         operatorsAliases: false
     });

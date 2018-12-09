@@ -1,7 +1,7 @@
 # Derived from official mysql image (our base image)
 FROM mysql:5.7
 # Add a database
-ENV MYSQL_DATABASE user_services
+ENV MYSQL_DATABASE meeting
 ENV MYSQL_ROOT_PASSWORD=root
 ENV MYSQL_USER=usr
 ENV MYSQL_PASSWORD=pwd

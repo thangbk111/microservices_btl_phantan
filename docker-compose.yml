@@ -1,40 +1,30 @@
 version: '3'
 services:
-  user_db:
+  db:
     build: './user_services/mysql'
     ports:
       - "3306:3306"
-
-  meeting_db:
-    build: './meeting_services/mysql'
-    ports:
-      - "3307:3306"
-
-  history_db:
-    build: './histories/mysql'
-    ports:
-      - "3308:3306"
 
   user_services:
     build: './user_services'
     ports:
       - "3000:3000"
     depends_on: 
-      - user_db
+      - db
 
   meeting_services:
     build: './meeting_services'
     ports:
       - "3001:3000"
     depends_on: 
-      - meeting_db
+      - db
 
   history_services:
     build: './histories'
     ports:
       - "3002:3000"
     depends_on: 
-      - history_db
+      - db
 
   nginx:
     image: nginx:latest
